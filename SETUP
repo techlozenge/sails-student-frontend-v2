@@ -1,0 +1,58 @@
+_______________________________________________________________________________
+SAILS PROJECT DATABASE ENDPOINTS
+
+There must be a database created with the needed tables
+
+npm install sails-mysql --save (make sure mysql is installed)
+
+sails new sails-student-api
+
+cd sails-student-api
+
+CONFIG:
+
+config/cors.js
+    Uncomment "allRoutes" and change it from false to true
+    Uncomment "origin: '*'"
+
+config/models.js
+    Uncomment "connection" and set the name to "someMysqlServer" (this is arbitrary)
+    Add the following:
+        // default launch to safe and not alter
+        migrate: 'safe',
+        // this means 'pay attention to my schema' to disallow invalid data
+        schema: true,
+        // prevent creation of these two timestamps
+        autoCreatedAt: false,
+        autoUpdatedAt: false
+
+config/connections.js
+    This is for remote databases. The local.js sets up the connection for local databases.
+    The default that sails.js uses is sqlLITE
+
+
+THIS IS ON THE API ONLY AND NOT ON THE FRONTEND!!!!!
+config/local.js
+    Add the following (at the bottom of the file):
+
+        // environment: process.env.NODE_ENV || 'development'
+        connections: {
+            someMysqlServer: {
+            adapter: 'sails-mysql',
+            host: '127.0.0.1',
+            user: 'root', //optional
+            password: 'C0ldiron', //optional
+            database: 'student_api' //optional
+            }
+        }
+
+config/blueprints.js
+    Set "defaultLimit:" to "-1" to override sails.js sending only 30 records at a time.
+    This will return all available records
+
+DEFINE ENDPOINT MODEL ATTRIBUTES:
+sails generate api [name-of-endpoint]
+cd api/controllers
+edit [name-of-endpoint].js
+cd api/models
+edit [name-of-endpoint].js
