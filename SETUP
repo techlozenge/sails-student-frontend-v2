@@ -1,6 +1,9 @@
 _______________________________________________________________________________
 SAILS PROJECT DATABASE ENDPOINTS
 
+sails generate controller [NameController] (e.g. ClassController)
+if something changes in the api directory then sails must be restarted
+
 There must be a database created with the needed tables
 
 npm install sails-mysql --save (make sure mysql is installed)

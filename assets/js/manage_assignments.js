@@ -16,12 +16,60 @@
 
   $(function(){
 
+    $('#assignmentTable').DataTable({
+      colReorder: true,
+      "scrollX": true,
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+
+    var validator = $("#manageAssignmentForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       student_id: {
+         required: true,
+         minlength: 1
+       },
+       assignment_nbr: {
+         required: true,
+         minlength: 1
+       },
+       grade_id: {
+         required: false
+       },
+       class_id: {
+         required: true,
+         minlength: 1
+       }
+     },
+     messages: {
+       student_id: {
+         required: "Student ID is required",
+         minlength: jQuery.validator.format("What is the student ID?")
+       },
+       assignment_nbr: {
+         required: "Assignment Number required",
+         minlength: jQuery.validator.format("Enter a valid assignment number.")
+       },
+       class_id: {
+         required: "Class ID is required",
+         minlength: jQuery.validator.format("Enter a valid class ID.")
+       }
+     },
+   });
+
+
     //initialize variables for items in the DOM we will work with
     let manageAssignmentForm = $("#manageAssignmentForm");
     let addAssignmentButton = $("#addAssignmentButton");
 
     //add assignment button functionality
     addAssignmentButton.click(function(){
+      $("input").val('');
+      validator.resetForm();
+
       manageAssignmentForm.attr("action", "/create_assignment");
       manageAssignmentForm.dialog({
         title: "Add Record",

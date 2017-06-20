@@ -16,12 +16,68 @@
 
   $(function(){
 
+    $('#instructorTable').DataTable({
+      colReorder: true,
+      "scrollX": true,
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+
+    var validator = $("#manageInstructorForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       first_name: {
+         required: true,
+         minlength: 2
+       },
+       last_name: {
+         required: false
+       },
+       major_id: {
+         required: true,
+         minlength: 1
+       },
+       years_of_experience: {
+         required: true,
+         minlength: 1
+       },
+       tenured: {
+         required: true,
+         minlength: 1
+       }
+     },
+     messages: {
+       first_name: {
+         required: "Firse name is required",
+         minlength: jQuery.validator.format("What is the first name?")
+       },
+       major_id: {
+         required: "A major id is required",
+         minlength: jQuery.validator.format("What is the Major ID?")
+       },
+       years_of_experience: {
+         required: "How many years of experience does this instructor have?",
+         minlength: jQuery.validator.format("What Years of Experience?")
+       },
+       tenured: {
+         required: "Is the instructor tenured?",
+         minlength: jQuery.validator.format("What is the instructor tenure status?")
+       }
+     },
+   });
+
+
     //initialize variables for items in the DOM we will work with
     let manageInstructorForm = $("#manageInstructorForm");
     let addInstructorButton = $("#addInstructorButton");
 
     //add instructor button functionality
     addInstructorButton.click(function(){
+      $("input").val('');
+      validator.resetForm();
+
       manageInstructorForm.attr("action", "/create_instructor");
       manageInstructorForm.dialog({
         title: "Add Record",
@@ -43,9 +99,11 @@
 
       console.log("instructorTable edit button clicked for ID " + recordId);
 
-      manageInstructorForm.find("input[name=instructor_id").val(recordId);
+      manageInstructorForm.find("input[name=instructor_id]").val(recordId);
       manageInstructorForm.attr("action", "/update_instructor");
       let instructor = getInstructor(recordId);
+
+      console.log("ID " + instructor);
 
       //populate form when api call is done (after we get instructor to edit)
       instructor.done(function(data){

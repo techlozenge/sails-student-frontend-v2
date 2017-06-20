@@ -17,6 +17,7 @@
       <th>Major ID</th>
       <th>Years of Experience</th>
       <th>Tenured</th>
+      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -27,7 +28,7 @@
         <td><%= instructor.first_name %></td>
         <td><%= instructor.last_name %></td>
         <td><%= instructor.major_id %></td>
-        <td><%= instructor.years_of_expierience %></td>
+        <td><%= instructor.years_of_experience %></td>
         <td><%= instructor.tenured %></td>
         <td class="text-center">
           <button class="btn btn-primary" id="editButton" data-instructorid="<%= instructor.instructor_id %>">edit</button>

@@ -26,6 +26,8 @@ module.exports = {
             headers: { "Content-Type": "application/json" }
         };
 
+        //console.log(req.body);
+
         client.post(endpoint, args, function (data, response) {
             // return res.view('create', {success: { message: "Record added successfully"}});
             if(response.statusCode != "201"){
@@ -63,6 +65,8 @@ module.exports = {
         data: clean_request_body(req.body),
         headers: { "Content-Type": "application/json" }
     };
+
+    console.log("DATA= " + data);
 
     client.put(endpoint + "/" + instructorId, args, function (data, response) {
 

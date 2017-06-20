@@ -51,6 +51,21 @@ module.exports.routes = {
   'POST /update_student': 'StudentController.update',
   'POST /delete_student': 'StudentController.delete',
 
+  'POST /create_major': 'MajorController.create',
+  'GET /manage_majors': 'MajorController.read',
+  'POST /update_major': 'MajorController.update',
+  'POST /delete_major': 'MajorController.delete',
+
+  'POST /create_instructor': 'InstructorController.create',
+  'GET /manage_instructors': 'InstructorController.read',
+  'POST /update_instructor': 'InstructorController.update',
+  'POST /delete_instructor': 'InstructorController.delete',
+
+  'POST /create_class': 'ClassController.create',
+  'GET /manage_classes': 'ClassController.read',
+  'POST /update_class': 'ClassController.update',
+  'POST /delete_class': 'ClassController.delete',
+
   'POST /create_grade': 'GradeController.create',
   'GET /manage_grades': 'GradeController.read',
   'POST /update_grade': 'GradeController.update',
@@ -61,29 +76,14 @@ module.exports.routes = {
   'POST /update_assignment': 'AssignmentController.update',
   'POST /delete_assignment': 'AssignmentController.delete',
 
-  'POST /create_class': 'ClassController.create',
-  'GET /manage_classes': 'ClassController.read',
-  'POST /update_class': 'ClassController.update',
-  'POST /delete_class': 'ClassController.delete',
+  'POST /create_major_class': 'Major_ClassController.create',
+  'GET /manage_major_class': 'Major_ClassController.read',
+  'POST /update_major_class': 'Major_ClassController.update',
+  'POST /delete_major_class': 'Major_ClassController.delete',
 
-  'POST /create_instructor': 'InstructorController.create',
-  'GET /manage_instructors': 'InstructorController.read',
-  'POST /update_instructor': 'InstructorController.update',
-  'POST /delete_instructor': 'InstructorController.delete',
-
-  'POST /create_major': 'MajorController.create',
-  'GET /manage_majors': 'MajorController.read',
-  'POST /update_major': 'MajorController.update',
-  'POST /delete_major': 'MajorController.delete',
-
-  // 'POST /create_major_class': 'Major_ClassController.create',
-  // 'GET /manage_major_class': 'Major_ClassController.read',
-  // 'POST /update_major_class': 'Major_ClassController.update',
-  // 'POST /delete_major_class': 'Major_ClassController.delete',
-  //
-  // 'POST /create_student_class': 'Student_ClassController.create',
-  // 'GET /manage_student_class': 'Student_ClassController.read',
-  // 'POST /update_student_class': 'Student_ClassController.update',
-  // 'POST /delete_student_class': 'AStudent_ClassController.delete'
+  'POST /create_student_class': 'Student_ClassController.create',
+  'GET /manage_student_class': 'Student_ClassController.read',
+  'POST /update_student_class': 'Student_ClassController.update',
+  'POST /delete_student_class': 'Student_ClassController.delete'
 
 };

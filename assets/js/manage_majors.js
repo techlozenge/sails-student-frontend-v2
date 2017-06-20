@@ -16,12 +16,49 @@
 
   $(function(){
 
+    $('#majorTable').DataTable({
+      colReorder: true,
+      "scrollX": true,
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+
+    var validator = $("#manageMajorForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       major: {
+         required: true,
+         minlength: 2
+       },
+       sat: {
+         required: true,
+         minlength: 3
+       }
+     },
+     messages: {
+       subject: {
+         required: "Major required",
+         minlength: jQuery.validator.format("What is your Major?")
+       },
+       course: {
+         required: "SAT score required",
+         minlength: jQuery.validator.format("Enter the SAT score of 3-4 digits")
+       }
+     },
+   });
+
+
     //initialize variables for items in the DOM we will work with
     let manageMajorForm = $("#manageMajorForm");
     let addMajorButton = $("#addMajorButton");
 
     //add major button functionality
     addMajorButton.click(function(){
+      $("input").val('');
+      validator.resetForm();
+
       manageMajorForm.attr("action", "/create_major");
       manageMajorForm.dialog({
         title: "Add Record",

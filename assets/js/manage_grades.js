@@ -17,12 +17,43 @@
 
   $(function(){
 
+
+    // $('#gradeTable').DataTable({
+    //   colReorder: true,
+    //   "scrollX": true,
+    //   dom: 'Bfrtip',
+    //   buttons: [
+    //       'copy', 'csv', 'excel', 'pdf', 'print'
+    //   ]
+    // });
+
+    var validator = $("#manageGradeForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       grade: {
+         required: true,
+         minlength: 2
+       }
+     },
+     messages: {
+       grade: {
+         required: "Grade is required",
+         minlength: jQuery.validator.format("What is the grade?")
+       }
+     },
+   });
+
+
+
     //initialize variables for items in the DOM we will work with
     let manageGradeForm = $("#manageGradeForm");
     let addGradeButton = $("#addGradeButton");
 
     //add grade button functionality
     addGradeButton.click(function(){
+      $("input").val('');
+      validator.resetForm();
+      
       manageGradeForm.attr("action", "/create_grade");
       manageGradeForm.dialog({
         title: "Add Record",

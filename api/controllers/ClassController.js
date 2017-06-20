@@ -49,7 +49,6 @@ module.exports = {
     }).on('error', function (err) {
         return res.view(view, {error: { message: "There was an error getting the classes"}});
     });
-
   },
 
 
@@ -77,6 +76,7 @@ module.exports = {
       return res.redirect(view);
     })
   },
+
 
   /**
    * `ClassController.delete()`

@@ -1,0 +1,49 @@
+Panel Discussion
+
+Tom McClellan - front-end grad, working in USCM (PI)
+Hari - Principal Dev. Full Stack Dev
+Matt Rul - PI, Mix of front and back-end
+Wendy Weir - Grad of back-end
+Nolan Licti - Front-end
+
+
+Salesforce - front-end framework Lightening (similar to React), IDE Eclipse
+Eclipse or flavors of Eclipse
+IntelliJ
+***** Visual Studio Code (really good with Angular)
+Atom (React support)
+Spring Tools Suite (built on Eclipse)
+Spring Boot back ends
+Plenty of legacy stuff still out there e.g. Websphere Java backend
+Angular 2 is a different mindset than OO
+
+Node/React
+
+Dive in and ask questions!
+
+Work the web! Ask questions!
+
+Odds are you're going to work on an existing product, so lots of learning and debugging
+Keep an open mind - don't get used to a particular stylesheets
+
+Liberty doesn't use git much at all
+Lots of subversion
+
+On-boarding: Salesforce has an online training called Trailhead. Also Pairing, rotation.
+
+Pairing helps to build quality into the process - Pair up and build in the code review
+Want to get rid of handoffs
+Test-driven dev is a good way to code review
+write the test to prove the bug and then write the code
+
+code goes through a static test via Bamboo that will not let code deploy until it passes the checks
+
+Make your code readable!!!
+
+Homebrew
+Chocolaty - Homebrew for windows
+
+Make you understand Promises 
+
+
+HERE ENDTH THE PANEL DISCUSSION
