@@ -25,7 +25,29 @@
       ]
     });
 
-
+    var validator = $("#manageStudent_ClassForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       student_id: {
+         required: true,
+         minlength: 1
+       },
+       class_id: {
+         required: true,
+         minlength: 1
+       }
+     },
+     messages: {
+       student_id: {
+         required: "Student ID is required",
+         minlength: jQuery.validator.format("What is the Student ID?")
+       },
+       class_id: {
+         required: "Class ID is required",
+         minlength: jQuery.validator.format("Enter a valid class ID.")
+       }
+     },
+   });
 
 
     //initialize variables for items in the DOM we will work with

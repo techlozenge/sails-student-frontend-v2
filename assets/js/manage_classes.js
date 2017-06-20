@@ -29,21 +29,26 @@
      errorClass: "text-danger",
      rules: {
        instructor_id: {
-         required: false
+         required: true,
+         minlength: 1
        },
        subject: {
          required: true,
-         minlength: 2
+         minlength: 1
        },
        course: {
          required: true,
-         minlength: 3
+         minlength: 1
        }
      },
      messages: {
+       instructor_id: {
+         required: "Instructor ID is required",
+         minlength: jQuery.validator.format("Enter a valid Instructor ID")
+       },
        subject: {
          required: "Course Subject required",
-         minlength: jQuery.validator.format("What subject are you taking?")
+         minlength: jQuery.validator.format("Enter a valid subject")
        },
        course: {
          required: "Course Number required",

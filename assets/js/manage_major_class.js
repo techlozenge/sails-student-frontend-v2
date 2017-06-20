@@ -25,12 +25,40 @@
       ]
     });
 
+    var validator = $("#manageMajor_ClassForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       major_id: {
+         required: true,
+         minlength: 1
+       },
+       class_id: {
+         required: true,
+         minlength: 1
+       }
+     },
+     messages: {
+       student_id: {
+         required: "Major ID is required",
+         minlength: jQuery.validator.format("Enter a valid Major ID")
+       },
+       class_id: {
+         required: "Class ID is required",
+         minlength: jQuery.validator.format("Enter a valid class ID")
+       }
+     },
+   });
+
+
     //initialize variables for items in the DOM we will work with
     let manageMajor_ClassForm = $("#manageMajor_ClassForm");
     let addMajor_ClassButton = $("#addMajor_ClassButton");
 
     // add major_class functionality
     addMajor_ClassButton.click(function(){
+      $("input").val('');
+      validator.resetForm();
+
       manageMajor_ClassForm.attr("action", "/create_major_class");
       manageMajor_ClassForm.dialog({
         title: "Add Record",

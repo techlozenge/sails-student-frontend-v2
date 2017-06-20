@@ -38,11 +38,11 @@
        }
      },
      messages: {
-       subject: {
+       major: {
          required: "Major required",
          minlength: jQuery.validator.format("What is your Major?")
        },
-       course: {
+       sat: {
          required: "SAT score required",
          minlength: jQuery.validator.format("Enter the SAT score of 3-4 digits")
        }

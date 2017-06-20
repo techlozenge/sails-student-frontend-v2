@@ -22,9 +22,67 @@
       dom: 'Bfrtip',
       buttons: [
           'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
+      columnDefs: [
+        { width: '20%', target: 7 }
       ]
     });
 
+    var validator = $("#manageStudentForm").validate({
+     errorClass: "text-danger",
+     rules: {
+       first_name: {
+         required: true,
+         minlength: 2
+       },
+       last_name: {
+         required: true,
+         minlength: 2
+       },
+       start_date: {
+         required: true,
+         minlength: 1
+       },
+       gpa: {
+         required: true,
+         minlength: 1
+       },
+       sat: {
+         required: true,
+         minlength: 3
+       },
+       major_id: {
+         required: true,
+         minlength: 1
+       }
+     },
+     messages: {
+       first_name: {
+         required: "First name is required",
+         minlength: jQuery.validator.format("What is the first name?")
+       },
+       last_name: {
+         required: "Last name is required",
+         minlength: jQuery.validator.format("What is the first name?")
+       },
+       start_date: {
+         required: "Enter start date in format YYYY-MM-DD",
+         minlength: jQuery.validator.format("Data format is YYYY-MM-DD")
+       },
+       gpa: {
+         required: "GPA is required",
+         minlength: jQuery.validator.format("Enter the GPA needed for this major")
+       },
+       sat: {
+         required: "SAT score required",
+         minlength: jQuery.validator.format("Enter the SAT score of 3-4 digits")
+       },
+       major_id: {
+         required: "Major ID required",
+         minlength: jQuery.validator.format("Enter a valid Major ID")
+       }
+     },
+   });
 
 
     //initialize variables for items in the DOM we will work with

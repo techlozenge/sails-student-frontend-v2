@@ -33,7 +33,8 @@
          minlength: 2
        },
        last_name: {
-         required: false
+         required: true,
+         minlength: 2
        },
        major_id: {
          required: true,
@@ -50,8 +51,12 @@
      },
      messages: {
        first_name: {
-         required: "Firse name is required",
+         required: "First name is required",
          minlength: jQuery.validator.format("What is the first name?")
+       },
+       last_name: {
+         required: "Last name is required",
+         minlength: jQuery.validator.format("What is the last name?")
        },
        major_id: {
          required: "A major id is required",
@@ -62,8 +67,8 @@
          minlength: jQuery.validator.format("What Years of Experience?")
        },
        tenured: {
-         required: "Is the instructor tenured?",
-         minlength: jQuery.validator.format("What is the instructor tenure status?")
+         required: "Enter the tenure: 1 for Yes and 0 for No",
+         minlength: jQuery.validator.format("What is the instructor tenure status - 1 for Yes and 0 for No?")
        }
      },
    });
