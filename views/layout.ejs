@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Student Admin</title>
 
-        <!-- INCLUDE STYLES HERE (generic to specific) -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.css"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ford University Course Administration System</title>
 
-        <!--bootstrap-->
-<!--
+    <!-- INCLUDE STYLES HERE (generic to specific) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.css" />
+
+    <!--bootstrap-->
+    <!--
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!--jquery-ui css-->
-        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--jquery-ui css-->
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-        <!--styles.css should always be last-->
-        <link rel="stylesheet" type="text/css" href="styles/styles.css">
-        <!-- INCLUDE STYLES HERE END -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-    </head>
-    <body>
+    <!--styles.css should always be last-->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!-- INCLUDE STYLES HERE END -->
 
-        <!-- Fixed navbar -->
-        <%- partial ('partials/navigation.ejs') %>
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <%- partial ('partials/navigation.ejs') %>
 
         <div class="container">
             <!-- include view here -->
@@ -38,7 +42,7 @@
         <footer class="footer">
             <div class="container">
                 <p></p>
-                <p>&copy; 2016 Ford University, Inc.</p>
+                <p>&copy; 2016 Ford University, Inc. <small class="text-muted"><i>*No longer affiliated with Trump University*</i></small></p>
                 <p></p>
             </div>
         </footer>
@@ -72,7 +76,10 @@
         <script src="js/manage_major_class.js"></script>
         <script src="js/manage_student_class.js"></script>
 
+        <script src="js/course_admin_utils.js"></script>
+
         <!-- INCLUDE JS LIBRARIES HERE END -->
 
-    </body>
+</body>
+
 </html>

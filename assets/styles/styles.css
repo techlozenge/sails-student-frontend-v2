@@ -1,43 +1,38 @@
-
 table {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
-.jumbotron {
-    background-color: white;
+#srchText {
+    width: 150px;
 }
 
-.jumbotron h1 {
+
+/* massages the top hero image */
+
+#styler {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.breadcrumb {
+    color: black;
+    float: left;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+h1 {
     padding: 0px;
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 40px;
     font-style: bold;
-}
-
-.jumbotron h2 {
-    padding: 0px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    font-size: 30px;
-    font-style: bold;
-}
-
-.jumbotron img {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-.container {
-    margin-left: 10px;
-    margin-top: 0px;
-    padding-top: 0px;
-}
-
-.col-md-4 {
-    width: 350px;
-    margin-left: 85px;
 }
 
 hr {
@@ -56,7 +51,23 @@ footer {
     padding-bottom: 0px;
 }
 
-/* Customize container */
+.container {
+    margin-left: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.col-md-4 {
+    width: 350px;
+    margin-left: 85px;
+}
+
+
+/* Customize container
+
+    TODO: Need to rework these for different sized views
+*/
+
 @media (min-width: 600px) {
     .container {
         /*max-width: 768px;*/
@@ -64,7 +75,10 @@ footer {
         width: 100%;
     }
 }
+
+
 /* Customize container */
+
 @media (min-width: 800px) {
     .container-fluid {
         max-width: 100%;
