@@ -17,15 +17,17 @@
 
   $(function(){
 
-
-    // $('#gradeTable').DataTable({
-    //   colReorder: true,
-    //   "scrollX": true,
-    //   dom: 'Bfrtip',
-    //   buttons: [
-    //       'copy', 'csv', 'excel', 'pdf', 'print'
-    //   ]
-    // });
+    $('#gradeTable').DataTable({
+      colReorder: true,
+      "scrollX": true,
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
+      columnDefs: [
+        { width: '20%', target: 7 }
+      ]
+    });
 
     var validator = $("#manageGradeForm").validate({
      errorClass: "text-danger",

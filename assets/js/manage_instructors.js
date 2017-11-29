@@ -19,11 +19,17 @@
     $('#instructorTable').DataTable({
       colReorder: true,
       "scrollX": true,
+      "searching": true,
+      "info": true,
       dom: 'Bfrtip',
       buttons: [
           'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
+      columnDefs: [
+        { width: '20%', target: 7 }
       ]
     });
+
 
     var validator = $("#manageInstructorForm").validate({
      errorClass: "text-danger",

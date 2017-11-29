@@ -35,11 +35,8 @@ module.exports = {
 
             req.addFlash("success", "Record created successfully");
             return res.redirect(view);
-
         })
-
-  },
-
+  }, // end create
 
   /**
    * `StudentController.read()`
@@ -51,8 +48,7 @@ module.exports = {
     }).on('error', function (err) {
         return res.view(view, {error: { message: "There was an error getting the students"}});
     });
-
-  },
+  }, // end read
 
 
    /**
@@ -77,9 +73,8 @@ module.exports = {
 
       req.addFlash("success", "Record updated successfully");
       return res.redirect(view);
-
     })
-  },
+  }, // end update
 
   /**
    * `StudentController.delete()`
@@ -97,8 +92,6 @@ module.exports = {
       return res.redirect(view);
 
     })
+  } // end delete
 
-
-  }
-
-};
+}; // end module.exports

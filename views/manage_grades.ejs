@@ -12,16 +12,21 @@
 
 <h2>Manage Grades</h2>
 <button class="btn btn-success" id="addGradeButton">Add Grade</button>
+
+
 <table class="table table-striped table-bordered" id="gradeTable" style="width:100%">
+
   <thead>
     <tr>
       <th>ID</th>
       <th>Grade</th>
+      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
+
   <% if(typeof grades != "undefined" && grades.length > 0){ %>
-    <% grades.forEach(function(grade){ %>
+    <% grades.forEach(function(grade){ %></td>
       <tr>
         <td><%= grade.grade_id %></td>
         <td><%= grade.grade %></td>
